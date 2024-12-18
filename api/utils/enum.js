@@ -5,6 +5,7 @@ exports.UserStatus = {
 exports.RoleCode = {
   USER: 'USER',
   ADMIN: 'ADMIN',
+  WORKER: 'WORKER',
 };
 exports.Env = {
   production: 'production',

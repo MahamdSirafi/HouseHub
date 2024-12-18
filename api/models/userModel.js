@@ -6,6 +6,15 @@ const { RoleCode } = require('../utils/enum');
 const userSchema = new mongoose.Schema(
   {
     // <creating-property-schema />
+    address: {
+      type: String,
+      required: [true, 'Please enter name  address'],
+    },
+    phone: {
+      type: String,
+      required: [true, 'Please enter name  phone'],
+      unique: true,
+    },
     name: {
       type: String,
       required: [true, 'Please tell us your name!'],
@@ -48,6 +57,7 @@ const userSchema = new mongoose.Schema(
   { versionKey: false },
 );
 // <creating-function-schema />
+
 userSchema.pre('save', async function (next) {
   // Only run this function if password was actually modified
   if (!this.isModified('password')) return next();
